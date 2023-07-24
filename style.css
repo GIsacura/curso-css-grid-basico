@@ -1,0 +1,95 @@
+.contenedor {
+  border: 5px solid #e1bee7;
+  background-color: #fff1ff;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  /* indica la cantidad de columnas y el tamaño*/
+  /* grid-template-rows: 100px 100px 100px; */
+  grid-auto-rows: 150px;
+  /* Esta regla se utiliza cuando no hay una cantidad especifica de filas pero queremos indicar un tamaño estándar para todas las filas */
+  /* grid-auto-columns: 100px; /*Esta regla se utiliza cuando no hay una cantidad especifica de columnas pero queremos indicar un tamaño estándar para todas las columnas; */
+  /*grid-auto-flow: column; /* Esta regla se utiliza para indicar el orden en el que se van a colocar los elementos en el grid. */
+  /* row-gap: 15px;
+  column-gap: 30px; */
+  gap: 15px;
+  /* Se aplica tanto para columna como para filas */
+  height: 600px;
+  /*
+  justify-(item, content, self): alineación horizontal, self es para el contenido de la celda, content es para el contenedor como unidad completa, item, es para todas las celdas respecto al contenedor
+  align-(item, content, self): alineación vertical
+  place-(item, content, self): alineación en ambos sentidos
+  */
+  /*
+    grid-column-start: indica en que columna va empezar un elemento
+    grid-column-end: indica en que columna va terminar un elemento
+    grid-row-start: indica en que fila va empezar un elemento
+    grid-row-end: indica en que fila va terminar un elemento
+    grid-area: indica donde va a iniciar y terminar tanto en filas como en columnas
+  */
+  place-items: end;
+  place-content: center;
+}
+
+.contenedor2 {
+  border: 5px solid #e1bee7;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: 75px 75px 75px;
+  grid-template-areas:
+    "header header header"
+    "side main main"
+    "side main main";
+  ;
+  place-content: center;
+}
+
+.item {
+  border: 5px solid #00bcd4;
+  font-size: 2rem;
+}
+
+.contenedor2>.item-1 {
+  border: 5px solid #f8bbd0;
+  background-color: #fff1ff;
+  grid-area: header;
+  /* grid-column-start: 1;
+  grid-column-end: 4; */
+}
+
+.contenedor2>.item-2 {
+  border: 5px solid #e1bee7;
+  grid-area: side;
+  /* grid-row: 2 / 4; */
+  background-color: #fff1ff;
+}
+
+.contenedor2>.item-3 {
+  border: 5px solid #b2ebf2;
+  background-color: #fff1ff;
+  grid-area: main;
+  /* grid-area: 2 / 2 / 4 / 4; /* El orden de los cuatro valores son row-start column-start row-end column-end*/
+}
+
+.contenedor3 {
+  border: 5px solid #e1bee7;
+  background-color: white;
+  display: grid;
+  grid-template-columns: minmax(30px, 300px) 200px minmax(60px, 250px);
+  grid-template-rows: repeat(3, auto);
+}
+
+.contenedor4 {
+  border: 5px solid #e1bee7;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.contenedor5 {
+  border: 5px solid #e1bee7;
+  background-color: white;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
